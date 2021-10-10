@@ -1,0 +1,30 @@
+{
+    "name": "ywz-tools/arrayHepler",
+    "description": "This is a PHP array manipulation middleware",
+    "authors": [
+        {
+            "name": "ywz",
+            "email": "344869408@163.com",
+        }
+    ],
+    "homepage":"https://github.com/accountYwz/hepler.git",
+    "license": "MIT",
+    "keywords": [
+        "array",
+        "php-array"
+    ],
+
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "pf\\arr\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "example\\": "example"
+        }
+    },
+}

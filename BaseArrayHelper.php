@@ -22,6 +22,26 @@ use helpers\base\InvalidArgumentException;
 class BaseArrayHelper
 {
     /**
+     * @param $arr
+     * @return mixed
+     * @@Notes:格式化数组:1.把所有number类型的值转换为string 2.键值-的形式转换为小驼峰
+     * @@Author:yangWanZhang
+     * @@email  wz_yang@juling.vip
+     * @@Date: 2021/10/10
+     * @@Modify:yangWanZhang
+     */
+    public function formatResponse(&$arr)
+    {
+        foreach ($arr as $key => $value) {
+            if (is_array($value)) {
+                $this->formatResponse($arr[$key]);
+            } else if(is_numeric($value)&&!is_string($value)){
+                $arr[$key] =(string)$value;
+            }
+        }
+        return $arr;
+    }
+    /**
      * 对象转数组
      * Converts an object or an array of objects into an array.
      * @param object|array|string $object the object to be converted into an array
